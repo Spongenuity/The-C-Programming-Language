@@ -14,5 +14,8 @@
  */
 int main() {
   // Your code here 
+  int x = 5;
+
+  return x;
 }
 

@@ -1,16 +1,16 @@
-#include <math.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <stdarg.h>
-#include <setjmp.h>
-#include <signal.h>
-#include <time.h>
-#include <limits.h>
-#include <float.h>
+// #include <math.h>
+// #include <ctype.h>
+// #include <string.h>
+// #include <stdlib.h>
+// #include <assert.h>
+// #include <stdarg.h>
+// #include <setjmp.h>
+// #include <signal.h>
+// #include <time.h>
+// #include <limits.h>
+// #include <float.h>
 
-int outsideVariable = 5;
+// int outsideVariable = 5;
 
 /**
  * primitives (int char float double)
@@ -87,7 +87,7 @@ int outsideVariable = 5;
 #include <stdio.h>
 
 int main(int argc, char** argv) {
-  printf("Hello world!");
+  printf("Hello world!\n");
   // forward declaration
   // It used to be required that any variable you wished to use inside of
   // a function had to be declared at the top of the function, then used later.
@@ -98,37 +98,40 @@ int main(int argc, char** argv) {
   foo = 5;
   // or, even more commonly:
   int i;
-  for (i = 0 ; i < 5 ; ++i) {}
+  for (i = 0 ; i < 5 ; ++i) {
+      printf("%d\n", i);
+  }
   // now it is allowed to do:
-  int Foo = 5;
+  int Foo = 8;
+  
 
   // struct forward declaration
   // https://stackoverflow.com/questions/18658438/what-is-forward-declaration-and-the-difference-between-typedef-struct-x-and
   // automatically hoisted?
-  struct element {
-      int value;
-      // Use of the forward declaration
-      struct element *next;
-  }; // Complete definition
-  // Tagged struct, has to be defined as a struct to use
-  struct flement {
-      int value;
-      // No need for a forward declaration here
-      struct flement *next;
-  } flement; // tag
+//   struct element {
+//       int value;
+//       // Use of the forward declaration
+//       struct element *next;
+//   }; // Complete definition
+//   // Tagged struct, has to be defined as a struct to use
+//   struct flement {
+//       int value;
+//       // No need for a forward declaration here
+//       struct flement *next;
+//   } flement; // tag
   
-  element bar;
-  bar.value = 5;
-  bar.next = &bar;
+//   struct element bar;
+//   bar.value = 5;
+//   bar.next = &bar;
 
-  struct flement baz;
-  baz.value = 6;
-  baz.next = &baz;
+//   struct flement baz;
+//   baz.value = 6;
+//   baz.next = &baz;
 
-  typedef struct flement glement;
-  glement bale;
-  bale.value = 7;
-  bale.next = &bale;
+//   typedef struct flement glement;
+//   glement bale;
+//   bale.value = 7;
+//   bale.next = &bale;
 
   /* faults - SIGSEGV, SIG, et
    * header files
@@ -142,8 +145,8 @@ int main(int argc, char** argv) {
   // file. The extern keyword moves a variable from file scope into global scope
   // so it can be read by other files.
 
-  extern int outsideVariable;
-  int y = outsideVariable;
+//   extern int outsideVariable;
+//   int y = outsideVariable;
 
   // includes 
   // External files are referred to by their header.
@@ -173,7 +176,7 @@ int main(int argc, char** argv) {
 
  clang -pedantic micro.C -S -o test.asm
  */
-  char* myString = "Hello dude";
+//   char* myString = "Hello dude";
 }
 
 

@@ -21,5 +21,9 @@
  */
 int main(int argc, char** argv) {
     // Your code here 
+    printf("%s, %s, %s, %d\n",argv[0], argv[1], argv[2], argc); 
 }
 
+/* 
+ *  So `argv` is the "argument value" & `argc` is the "argument count"
+ */
